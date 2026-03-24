@@ -20,7 +20,7 @@ const Header = () => {
           <FontAwesomeIcon icon={faXmark} className={`absolute transition-all duration-600 ${openMenu ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-75'}`} />
         </button>
 
-        <h1 className="text-gray-100 font-semibold text-3xl">Portifólio</h1>
+        <h1 className="text-gray-100 font-semibold text-3xl">Portfólio</h1>
 
         <div> 
           {/* className={`flex items-center ${classLight} w-20 h-8 bg-cyan-800 cursor-pointer rounded-full hover:bg-cyan-600 transition-all duration-300 px-1`} onClick={toggleLigth}>
