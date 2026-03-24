@@ -10,14 +10,14 @@ const Sobre = () => {
         });
     }
 
-    const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href =  `${import.meta.env.BASE_URL}pdf/Curriculo_Vinicius_Alves_FrontEnd.pdf`;
-        link.download = 'Curriculo_Vinicius_Alves_FrontEnd.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
+    // const handleDownload = () => {
+    //     const link = document.createElement('a');
+    //     link.href =  `${import.meta.env.BASE_URL}pdf/Curriculo_Vinicius_Alves_FrontEnd.pdf`;
+    //     link.download = 'Curriculo_Vinicius_Alves_FrontEnd.pdf';
+    //     document.body.appendChild(link);
+    //     link.click();
+    //     document.body.removeChild(link);
+    // }
 
     return (
         <section className="w-full pt-24 pb-40 px-6" id="sobre">
@@ -29,7 +29,8 @@ const Sobre = () => {
                     <span className="text-5xl font-bold text-cyan-800">Vinicius Alves</span>
                     <p className="text-sm text-white">Desenvolvedor Front-End | Javascript | React</p>
                     <div className="flex justify-center gap-4 mt-6">
-                        <button onClick={handleDownload} className="w-36 h-12 bg-cyan-800/80 text-white text-md rounded-xl border-[1px] border-cyan-600 hover:bg-cyan-600 transition-all duration-500 hover:scale-110 cursor-pointer">Download CV</button>
+                        <a href="/pdf/Curriculo_Vinicius_Alves_Front-end.pdf" download="Curriculo_Vinicius_Alves_FrontEnd.pdf" className="w-36 h-12 
+                        flex justify-center items-center bg-cyan-800/80 text-white text-md rounded-xl border-[1px] border-cyan-600 hover:bg-cyan-600 transition-all duration-500 hover:scale-110 cursor-pointer">Download CV</a>
                         <button onClick={() => { scrollContato('contato') }} className="w-36 h-12 text-white text-md rounded-xl border-[1px] border-cyan-600 hover:bg-cyan-600 transition-all duration-500 hover:scale-110 cursor-pointer">Entrar em contato</button>
                     </div>
                 </div>
