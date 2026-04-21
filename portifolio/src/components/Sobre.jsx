@@ -1,6 +1,6 @@
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import avatar from "/image/Avatar-Vinicius.png"
+import vinicius from "/image/Vinicius-Alves.png"
 
 const Sobre = () => {
 
@@ -37,7 +37,7 @@ const Sobre = () => {
 
                 <div className="flex justify-center ">
                     <div className="w-[350px] aspect-square overflow-hidden rounded-full border-[5px] border-cyan-700 outline-[5px] transition-all duration-500 hover:scale-110 outline-cyan-900 cursor-pointer">
-                        <img src={avatar} alt="Minha Foto" className="w-full h-full object-cover " />
+                        <img src={vinicius} alt="Minha Foto" className="w-full h-full object-cover " />
                     </div>
                 </div>
 
