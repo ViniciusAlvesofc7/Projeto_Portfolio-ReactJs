@@ -1,7 +1,6 @@
-@import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import "tailwindcss";
 
 
 @layer base {
@@ -31,6 +30,79 @@
 }
 
 @layer components {
+    .preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background:
+            radial-gradient(circle at top, rgba(0, 146, 184, 0.18), transparent 38%),
+            linear-gradient(145deg, #020405 0%, #0A0C0D 48%, #03141a 100%);
+    }
+
+    .preloader::before,
+    .preloader::after {
+        content: '';
+        position: absolute;
+        width: 34rem;
+        height: 34rem;
+        border-radius: 999px;
+        filter: blur(90px);
+        opacity: 0.3;
+    }
+
+    .preloader::before {
+        top: -10rem;
+        left: -8rem;
+        background: rgba(0, 146, 184, 0.28);
+    }
+
+    .preloader::after {
+        right: -10rem;
+        bottom: -12rem;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .preloader__content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: min(92vw, 900px);
+    }
+
+    .preloader__signature {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+
+    .preloader__name {
+        fill: rgba(255, 255, 255, 0.08);
+        stroke: #f5fbff;
+        stroke-width: 1.4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 1200;
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(3rem, 9vw, 6.5rem);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        paint-order: stroke fill;
+    }
+
+    .preloader__tag {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: clamp(0.72rem, 1.3vw, 0.9rem);
+        font-weight: 500;
+        text-align: center;
+    }
+
     .bg-principal-escura {
         background-color: #0A0C0D;
     }
@@ -50,5 +122,21 @@
 
     .c-shape-squircle{
         corner-shape: squircle;
+    }
+}
+
+@media (max-width: 640px) {
+    @layer components {
+        .preloader__content {
+            gap: 0.75rem;
+        }
+
+        .preloader__signature {
+            transform: scale(1.08);
+        }
+
+        .preloader__name {
+            letter-spacing: 0.03em;
+        }
     }
 }
