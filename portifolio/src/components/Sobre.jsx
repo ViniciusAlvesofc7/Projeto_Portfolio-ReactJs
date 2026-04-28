@@ -29,7 +29,7 @@ const Sobre = () => {
                     <span className="text-5xl font-bold text-cyan-800">Vinicius Alves</span>
                     <p className="text-sm text-white">Desenvolvedor Front-End | Javascript | React</p>
                     <div className="flex justify-center gap-4 mt-6">
-                        <a href="pdf/Curriculo_Vinicius_Alves_Front-end.pdf" download="Curriculo_Vinicius_Alves_FrontEnd.pdf" className="w-36 h-12 
+                        <a href="pdf/Curriculo_Vinicius_Alves_Frontend.pdf" download="Curriculo_Vinicius_Alves_FrontEnd.pdf" className="w-36 h-12 
                         flex justify-center items-center bg-cyan-800/80 text-white text-md rounded-xl border-[1px] border-cyan-600 hover:bg-cyan-600 transition-all duration-500 hover:scale-110 cursor-pointer">Download CV</a>
                         <button onClick={() => { scrollContato('contato') }} className="w-36 h-12 text-white text-md rounded-xl border-[1px] border-cyan-600 hover:bg-cyan-600 transition-all duration-500 hover:scale-110 cursor-pointer">Entrar em contato</button>
                     </div>
