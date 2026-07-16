@@ -1,10 +1,14 @@
-import { faBootstrap, faCss3, faHtml5, faJs, faReact, faSass } from "@fortawesome/free-brands-svg-icons"
-import { faWater } from "@fortawesome/free-solid-svg-icons"
+
 import Skills from "./skills/Skills"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useRef } from "react"
 import { useGSAP } from "@gsap/react";
+import { SiFirebase, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { BsBootstrap, BsTypescript } from "react-icons/bs";
+import { BiLogoTypescript } from "react-icons/bi";
+import { FaBootstrap, FaCss3, FaHtml5, FaJs, FaReact, FaSass } from "react-icons/fa";
+import { FaT } from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +31,7 @@ const Habilidades = () => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 80%", // quando a seção entra
-        end: "bottom 50%", // quando a seção sai
+        end: "bottom 80%", // quando a seção sai
         scrub: true,
       },
     });
@@ -39,13 +43,15 @@ const Habilidades = () => {
         <h2 className="text-white font-bold p-2 mb-16 text-2xl border-b-[2px] border-cyan-600">Habilidades</h2>
 
         <div ref={sectionRef} className="flex gap-10 flex-wrap justify-center">
-            <Skills nome="HTML5" icon={faHtml5}/>
-            <Skills nome="CSS3" icon={faCss3}/>
-            <Skills nome="JavaScript" icon={faJs}/>
-            <Skills nome="Sass" icon={faSass}/>
-            <Skills nome="React" icon={faReact}/>
-            <Skills nome="Bootstrap" icon={faBootstrap}/>
-            <Skills nome="Tailwind" icon={faWater}/>
+            <Skills nome="HTML5" icon={FaHtml5}/>
+            <Skills nome="CSS3" icon={FaCss3}/>
+            <Skills nome="JavaScript" icon={FaJs}/>
+            <Skills nome="React" icon={FaReact}/>
+            <Skills nome="TypeScript" icon={SiTypescript}/>
+            <Skills nome="Sass" icon={FaSass}/>
+            <Skills nome="Bootstrap" icon={FaBootstrap}/>
+            <Skills nome="Tailwind" icon={SiTailwindcss}/>
+            <Skills nome="Firebase" icon={SiFirebase}/>
         </div>
       
     </section>
