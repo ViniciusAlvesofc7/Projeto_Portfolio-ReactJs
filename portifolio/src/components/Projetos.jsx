@@ -1,5 +1,5 @@
 import Cards from './cards/Cards'
-import { faReact, faJs, faHtml5, faNodeJs, faCss3, faSass, faBootstrap } from '@fortawesome/free-brands-svg-icons'
+import { faJs, faHtml5, faCss3, faSass, faBootstrap } from '@fortawesome/free-brands-svg-icons'
 import { faWater } from "@fortawesome/free-solid-svg-icons"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -8,11 +8,12 @@ import { useGSAP } from "@gsap/react";
 import pjtBarbearia from '/image/projeto-barbearia.png'
 import pjtClinica from '/image/projeto-clinica.png'
 import pjtHamburgueria from '/image/projeto-hamburgueria-tailwindcss.png'
+import { useNavigate } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Projetos = () => {
-
+    const navigate = useNavigate();
     const sectionRef = useRef(null);
 
     useGSAP(() => {
@@ -54,6 +55,10 @@ const Projetos = () => {
         }
     }, { scope: sectionRef });
 
+    function nextPageProjetos() {
+        navigate('/projetos');
+    }
+
 
     return (
 
@@ -61,7 +66,7 @@ const Projetos = () => {
         <section className="w-full overflow-hidden flex flex-col items-center justify-center px-6 pt-14 pb-40" id="projetos">
             <h2 className="text-white font-bold p-2 mb-16 text-2xl border-b-[2px] border-cyan-600">Projetos</h2>
 
-            <div ref={sectionRef} className='flex gap-10 justify-center flex-wrap'> 
+            <div ref={sectionRef} className='flex gap-10 justify-center flex-wrap'>
                 <Cards
                     img={pjtBarbearia}
                     alt="Barbearia"
@@ -92,6 +97,13 @@ const Projetos = () => {
                     github="https://github.com/ViniciusAlvesofc7/Projeto-hamburgueria-tailwindcss"
                 />
             </div>
+
+            <button
+            onClick={nextPageProjetos}
+            className="w-40 h-10 bg-cyan-800 text-white font-bold rounded-lg hover:bg-cyan-600 transition-all duration-300 mt-8 border-2 border-cyan-600 cursor-pointer"
+            >
+                Ver mais
+            </button>
 
 
         </section>

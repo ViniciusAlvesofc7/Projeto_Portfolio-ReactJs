@@ -1,39 +1,18 @@
-import { AnimatePresence, motion } from 'motion/react'
-import { useState } from 'react'
-import Header from './components/Header'
-import Sobre from './components/Sobre'
-import Habilidades from './components/Habilidades'
-import Projetos from './components/Projetos'
-import Certificados from './components/Certificados'
-import Contato from './components/Contato'
-import Footer from './components/Footer'
-import Preloader from './components/Preloader'
-import './index.css'
+import { Route, Routes } from "react-router-dom" 
+import Home from "./page/Home/Home.jsx"
+import PageProjetos from "./page/Projetos/PageProjetos.jsx"
+
 
 function App() {
-  const [loadingComplete, setLoadingComplete] = useState(false)
 
   return (
     <>
-      {!loadingComplete && <Preloader onComplete={() => setLoadingComplete(true)} />}
+    
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/projetos" element={<PageProjetos />} />
 
-      <AnimatePresence>
-        {loadingComplete ? (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-          >
-            <Header />
-            <Sobre />
-            <Habilidades />
-            <Projetos />
-            <Certificados />
-            <Contato />
-            <Footer />
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+    </Routes>
     </>
   )
 }
