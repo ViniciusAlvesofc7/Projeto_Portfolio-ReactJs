@@ -8,12 +8,10 @@ import { useGSAP } from "@gsap/react";
 import pjtBarbearia from '/image/projeto-barbearia.png'
 import pjtClinica from '/image/projeto-clinica.png'
 import pjtHamburgueria from '/image/projeto-hamburgueria-tailwindcss.png'
-import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 gsap.registerPlugin(ScrollTrigger);
 
 const Projetos = () => {
-    const navigate = useNavigate();
     const sectionRef = useRef(null);
 
     useGSAP(() => {
@@ -55,10 +53,6 @@ const Projetos = () => {
         }
     }, { scope: sectionRef });
 
-    function nextPageProjetos() {
-        navigate('/projetos');
-    }
-
 
     return (
 
@@ -98,12 +92,13 @@ const Projetos = () => {
                 />
             </div>
 
-            <button
-            onClick={nextPageProjetos}
-            className="w-40 h-10 bg-cyan-800 text-white font-bold rounded-lg hover:bg-cyan-600 transition-all duration-300 mt-8 border-2 border-cyan-600 cursor-pointer"
-            >
-                Ver mais
-            </button>
+            <Link to="/projetos">
+                <button
+                    className="w-40 h-10 bg-cyan-800 text-white font-bold rounded-lg hover:bg-cyan-600 transition-all duration-300 mt-8 border-2 border-cyan-600 cursor-pointer"
+                >
+                    Ver mais
+                </button>
+            </Link>
 
 
         </section>
