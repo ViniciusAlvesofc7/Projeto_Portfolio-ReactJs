@@ -1,5 +1,5 @@
 import { FaAngleDoubleDown } from "react-icons/fa";
-import { faJs, faHtml5, faCss3, faSass, faBootstrap } from '@fortawesome/free-brands-svg-icons'
+import { faJs, faHtml5, faCss3, faSass, faBootstrap, faReact } from '@fortawesome/free-brands-svg-icons'
 import { faWater } from "@fortawesome/free-solid-svg-icons"
 
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,8 @@ import Cards from "../../components/cards/Cards";
 import pjtBarbearia from '/image/projeto-barbearia.png'
 import pjtClinica from '/image/projeto-clinica.png'
 import pjtHamburgueria from '/image/projeto-hamburgueria-tailwindcss.png'
+import pjtDjefilmes from '/image/projeto-djefilmes.png'
+
 import { useEffect } from "react";
 
 
@@ -39,10 +41,20 @@ const PageProjetos = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     <Cards
+                        img={pjtDjefilmes}
+                        alt="Djefilmes"
+                        title="DJEFilmes"
+                        icon={[faHtml5, faCss3, faJs, faReact, faWater]}
+                        text="Landing page responsiva desenvolvida com ReactJS e TailwindCSS, para um fotógrafo e videomaker."
+                        link="https://djefilmes.vercel.app"
+                        github="https://github.com/ViniciusAlvesofc7/Eliabe"
+                    />
+
+                    <Cards
                         img={pjtBarbearia}
                         alt="Barbearia"
                         title="Barbearia"
-                        icon={[faHtml5, faCss3, faJs, faBootstrap]}
+                        icon={[faHtml5, faCss3, faJs, faBootstrap, faReact]}
                         text="Uma landing page responsiva, desenvolvida para meios de estudos e aprendizagem da ferramenta Bootstrap."
                         link="https://viniciusalvesofc7.github.io/Projeto-Barbearia/"
                         github="https://github.com/ViniciusAlvesofc7/Projeto-Barbearia"
@@ -62,7 +74,7 @@ const PageProjetos = () => {
                         img={pjtHamburgueria}
                         alt="Hamburgueria"
                         title="Hamburgueria"
-                        icon={[faHtml5, faCss3, faJs, faWater]}
+                        icon={[faHtml5, faCss3, faJs, faReact, faWater]}
                         text="Sistema de Pedidos de Hamburgueria, desenvolvido com TailwindCSS e JavaScript, para fins de estudo."
                         link="https://viniciusalvesofc7.github.io/Projeto-hamburgueria-tailwindcss/"
                         github="https://github.com/ViniciusAlvesofc7/Projeto-hamburgueria-tailwindcss"
